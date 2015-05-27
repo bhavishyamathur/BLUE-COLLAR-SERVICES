@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context="com.example.neeraj.mark3.activities.Plumber"
+    android:background="#888888"
+    android:clickable="true">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_margin="8dp"
+            >
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of Owner"
+                android:padding="15dp"
+                android:inputType="text"
+                android:gravity="center"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile No."
+                android:inputType="phone"
+                android:padding="15dp"
+                android:gravity="center"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email address"
+                android:padding="15dp"
+                android:gravity="center"
+                android:inputType="textEmailAddress"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pincode"
+                android:padding="15dp"
+                android:inputType="phone"
+                android:gravity="center"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Any other nearby Landmark"
+                android:padding="15dp"
+                android:gravity="center"
+                android:inputType="text"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:id="@+id/send"
+                android:textSize="23sp"
+                android:text="Confirm"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAllCaps="false"
+                android:background="@drawable/smalllineargreen"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:textColor="#ffffff"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+</RelativeLayout>

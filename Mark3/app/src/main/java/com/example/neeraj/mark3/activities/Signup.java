@@ -1,11 +1,13 @@
 package com.example.neeraj.mark3.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -28,8 +30,9 @@ public class Signup extends Activity {
     ImageView buttonselecti;
     EditText name1, day1, month1, year1, password1,email,mobileno;
     Button bsignup;
+    Vibrator v2;
 
-    String string_username, string_password,string_email,string_mobile;
+    public String string_username, string_password,string_email,string_mobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class Signup extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
 
+        v2 =(Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         buttonselecti = (ImageView) findViewById(R.id.imageview_propicfb);
         name1 = (EditText) findViewById(R.id.EditTextname);
         password1 = (EditText) findViewById(R.id.EditTextpassword);
@@ -50,6 +54,7 @@ public class Signup extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                v2.vibrate(45);
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, rli);
             }
@@ -58,7 +63,7 @@ public class Signup extends Activity {
         bsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                v2.vibrate(60);
                 string_username = name1.getText().toString();
                 string_password = password1.getText().toString();
                 string_email = email.getText().toString();

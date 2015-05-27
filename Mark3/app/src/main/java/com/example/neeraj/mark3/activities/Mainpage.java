@@ -1,24 +1,29 @@
 package com.example.neeraj.mark3.activities;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
+import android.widget.Button;
 
 import com.example.neeraj.mark3.R;
 import com.example.neeraj.mark3.fragments.NavigationDrawerFragment;
 
 
 public class Mainpage extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
+
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -35,6 +40,28 @@ public class Mainpage extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
 
+
+        Button plumber = (Button) findViewById(R.id.bplumber);
+        Button electrician = (Button) findViewById(R.id.belectrician);
+        Button painter = (Button) findViewById(R.id.bpainter);
+        Button mechanic = (Button) findViewById(R.id.bmechanic);
+        Button exit = (Button) findViewById(R.id.bexit);
+
+        plumber.setOnClickListener(this);
+        electrician.setOnClickListener(this);
+        painter.setOnClickListener(this);
+        mechanic.setOnClickListener(this);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v3 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v3.vibrate(60);
+                finish();
+                System.exit(0);
+
+            }
+        });
+
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -43,6 +70,16 @@ public class Mainpage extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        Vibrator v3 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v3.vibrate(60);
+        startActivity(new Intent(Mainpage.this, Formone.class));
     }
 
     @Override
@@ -64,12 +101,6 @@ public class Mainpage extends ActionBarActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
-                break;
-            case 4:
-                mTitle = "Batman";
-                break;
-            case 5:
-                mTitle = "Joker";
                 break;
         }
     }

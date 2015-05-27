@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#888888"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context="com.example.neeraj.mark3.activities.Plumber">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                android:gravity="center"
+                android:hint="Name of Owner"
+                android:padding="15dp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_weight="50"
+                    android:background="@drawable/smalllinear2white"
+                    android:gravity="center"
+                    android:hint="Workers "
+                    android:padding="15dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_weight="50"
+                    android:background="@drawable/smalllinear2white"
+                    android:gravity="center"
+                    android:hint="Days"
+                    android:padding="15dp" />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                android:gravity="center"
+                android:hint="Budget (in INR)"
+                android:padding="15dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="140sp"
+                android:layout_margin="6dp"
+                android:background="@drawable/smalllinear2white"
+                android:hint="Description of the Work"
+                android:gravity="center_horizontal"
+                android:padding="15dp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+            <HorizontalScrollView
+                android:layout_margin="6dp"
+                android:layout_width="fill_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+                <DatePicker
+                    android:paddingBottom="10sp"
+                    android:paddingTop="10sp"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:datePickerMode="calendar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/smalllinear2white"></DatePicker>
+            </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/bnext"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/smalllineargreen"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="next >>"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                />
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
